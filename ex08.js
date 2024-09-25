@@ -10,6 +10,11 @@ Create a function named repeatNumbers that will return a string with each of the
 
 const repeatNumbers = function (data) {
   // Put your solution here
+  let arr = [];
+  data.forEach((pair, index) => {
+    arr.push(String(pair[0]).repeat(pair[1]));
+  })
+  return arr.join(',');
 };
 
 console.log(repeatNumbers([[1, 10]])); // 1111111111

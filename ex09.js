@@ -10,7 +10,17 @@ Create a function named camelCase that will convert a string to camel case, and 
 
 const camelCase = function (input) {
   // Your code here
-};
+  const words = input.split(' ');
+
+  const camelCased = words.map((word, index) => {
+    if (index === 0) {
+      return word.toLowerCase();
+    }
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+
+  return camelCased.join('');
+}
 
 console.log(camelCase("this is a string")); // thisIsAString
 console.log(camelCase("loopy cornerstone")); //loopyCornerstone
