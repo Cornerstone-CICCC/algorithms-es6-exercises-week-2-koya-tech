@@ -22,6 +22,14 @@ This one is a doozy! We might want to start by creating a helper function called
 
 const chooseRecipe = function (bakeryA, bakeryB, recipes) {
   // Code here!
+  let conCookIndex = 1000;
+  recipes.map((obj, index) => {
+    if ((bakeryA.includes(obj.ingredients[0]) && bakeryB.includes(obj.ingredients[1]))
+      || (bakeryB.includes(obj.ingredients[0]) && bakeryA.includes(obj.ingredients[1]))) {
+      conCookIndex = index;
+    }
+  })
+  return recipes[conCookIndex].name;
 };
 
 let bakeryA = ["saffron", "eggs", "tomato paste", "coconut", "custard"];
